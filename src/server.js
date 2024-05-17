@@ -4,14 +4,16 @@ const PORT = 4000;
 
 const app = express();
 
+const gossipMiddleware = (req, res, next) => {
+    console.log("I'm in the middle!");
+    next();
+};
+
 const handleHome = (req, res) => {
-    return res.send("<h1>I still love you.</h1>");
+    return res.end("I love middlewares!");
 };
-const handleLogin = (req, res) => {
-    return res.send("Login here.");
-};
-app.get("/", handleHome);
-app.get("/login", handleLogin)
+
+app.get("/", gossipMiddleware, handleHome);
 
 const handleListening = () => console.log(`Server listening on port http://localhost:${PORT}🚀`);
 
