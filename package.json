@@ -2,11 +2,16 @@
   "name": "wetube",
   "version": "1.0.0",
   "description": "The best way to watch a videos",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "(https://github.com/ggsong0328/wetube-reloaded)"
   },
+  "scripts": {
+    "win": "node index.js"
+  },
   "author": "ggsong0328",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
